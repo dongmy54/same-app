@@ -1,13 +1,16 @@
+<div class="center jumbotron">
+	<h1>Welocome Sample App</h1>
 
-	<h1>Sample App</h1>
-	<p>
-		This is sample app home pages.
-		If you want know more information about the app.
-		please 
-		<a href="https://github.com/dongmy54/sample-app">
-			<em>click here</em>
-		</a> 
-	  
+	<h2>This is home pages of sample app.
+   detial information 
+     <a href="https://github.com/dongmy54/sample-app">
+			 <strong>click here</strong>
+		 </a> 
+	</h2>
 
-	</p>
+  <%= link_to "Sign Up Now", signup_path, class: "btn btn-lg
+                                          btn-primary" %>
+</div>
 
+<%= link_to image_tag("rails.png", alt: "Rails",size: 60), 
+                                  'https://ruby-china.org' %>
