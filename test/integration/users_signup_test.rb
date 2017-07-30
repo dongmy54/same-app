@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class SignUpTest < ActionDispatch::IntegrationTest
+class UserSignupTest < ActionDispatch::IntegrationTest
   
-  test "sign up" do
+  test "invalid signup information" do
     get new_user_path
     
     assert_no_difference "User.count" do

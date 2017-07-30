@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/about'  , to: "static_pages#about"
   
   get '/signup', to: "users#new"
+  post '/signup' => "users#create"
 
   resources :users
 end
