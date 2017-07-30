@@ -16,6 +16,7 @@ end
   gem 'jbuilder',     '2.4.1'
   gem 'bootstrap-sass'
   gem 'bcrypt',        '3.1.11'
+  gem 'awesome_rails_console'
 
   group :development, :test do
     gem 'sqlite3', '1.3.12'
