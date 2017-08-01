@@ -6,4 +6,5 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal full_title("title"), "title | Ruby On Rails"
   end
 
+
 end
