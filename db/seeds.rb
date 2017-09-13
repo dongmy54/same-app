@@ -8,5 +8,15 @@
 
 User.create!(name: "dmc",
              email: "123@qq.com",
-             password: "123456")
-puts "用户已经建立"
+             password: "123456",
+             admin: true)
+puts "管理员已创建成功"
+
+99.times do |n|
+  name = Faker::Name.unique.name
+  email = Faker::Internet.unique.email
+  User.create!(:name => name,
+               :email => email,
+               :password => "password")
+  puts "已创建第#{n+1}个"
+end
