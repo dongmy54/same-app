@@ -15,11 +15,11 @@ class User < ApplicationRecord
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                     BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)      
-  end
-
+  end   # 作用：将字符串转换为摘要
+  
   def User.new_token
     SecureRandom.urlsafe_base64
-  end
+  end   # 作用： 生成token值
 
   def remember
     self.remember_token = User.new_token
