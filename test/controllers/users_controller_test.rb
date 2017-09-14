@@ -53,7 +53,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
                                                     password_confirmation: "password",
                                                     admin: true } }
 
-    assert_not @other_user.admin? 
+    assert_not @other_user.reload.admin?            # 许多时候都要用到重新加载（reload)不然会出错
   end
 
   test "should redirect destroy when not logged in" do 
