@@ -2,13 +2,14 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
-
+  
   def index
-    @users = User.all.paginate(page: params[:page], per_page: 25)
+    @users = User.activated.paginate(page: params[:page], per_page: 25)
   end
 
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated
   end
 
   def new
@@ -23,9 +24,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      flash[:success] = "注册成功"
-      log_in @user
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = "请检查邮件，激活您的账户"
+      redirect_to root_url
     else
       render 'new'
     end 

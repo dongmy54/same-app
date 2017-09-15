@@ -39,4 +39,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # 这个测试环境的主机地址要单独配置
 end

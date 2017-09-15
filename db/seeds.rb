@@ -9,7 +9,9 @@
 User.create!(name: "dmc",
              email: "123@qq.com",
              password: "123456",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 puts "管理员已创建成功"
 
 99.times do |n|
@@ -17,6 +19,8 @@ puts "管理员已创建成功"
   email = Faker::Internet.unique.email
   User.create!(:name => name,
                :email => email,
-               :password => "password")
+               :password => "password",
+               :activated => true,
+               :activated_at => Time.zone.now)
   puts "已创建第#{n+1}个"
 end

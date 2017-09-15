@@ -1,0 +1,12 @@
+<h1>激活账户</h1>
+
+<p><strong>尊敬的<%= @user.name %>: </strong></p>
+
+<p style="text-indent: 2em;">
+  您好！请点击下面的链接，激活你的账户.
+</p>
+
+<% @user.activation_token = User.new_token unless @user.activation_token %> 
+<!-- 由于activation_token是在user创建时产生的虚拟属性，在user create动作中它还存活的，但在测试、控制太预览中都不存在，所以这里给个判断让其不报错 -->
+	
+<%= link_to "立即激活", edit_account_activation_url(@user.activation_token, email: @user.email) %>
