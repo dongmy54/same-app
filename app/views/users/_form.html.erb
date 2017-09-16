@@ -8,10 +8,10 @@
 	<%= f.text_field :email, class: "form-control" %>
 
 	<%= f.label :password %>
-	<%= f.text_field :password, class: "form-control" %>
+	<%= f.password_field :password, class: "form-control" %>
 
 	<%= f.label :password_confirmation, "Confirmation" %>
-	<%= f.text_field :password_confirmation, class: "form-control" %>
+	<%= f.password_field :password_confirmation, class: "form-control" %>
 
 	<%= f.submit yield(:text_button), class: "btn btn-primary" %>
 <% end %>
